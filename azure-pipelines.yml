@@ -26,7 +26,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'maolukeji (a5f577a3-bdfa-49fa-871a-4c71d5eceae7)'
+    azureSubscription: 'maolu'
     appType: 'webAppLinux'
     WebAppName: 'pcv2'
     packageForLinux: 'publish'
