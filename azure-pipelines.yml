@@ -29,5 +29,5 @@ steps:
     azureSubscription: 'maolukeji (a5f577a3-bdfa-49fa-871a-4c71d5eceae7)'
     appType: 'webAppLinux'
     WebAppName: 'pcv2'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     RuntimeStack: 'DOTNETCORE|2.2'
