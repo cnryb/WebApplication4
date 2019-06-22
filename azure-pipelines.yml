@@ -31,6 +31,6 @@ steps:
     WebAppName: 'pcv2'
     packageForLinux: 'publish'
     RuntimeStack: 'DOTNETCORE|2.2'
-    StartupCommand: 'dotnet WebApplication1.dll'
+    StartupCommand: 'dotnet /home/site/wwwroot/WebApplication1.dll'
     
   
