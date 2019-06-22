@@ -13,15 +13,15 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- script: dotnet publish
+- script: dotnet publish -o ../publish
   displayName: 'dotnet publish'
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)/bin/Debug/netcoreapp2.2/publish/'
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
+# - task: ArchiveFiles@2
+#   inputs:
+#     rootFolderOrFile: '$(Build.SourcesDirectory)/bin/Debug/netcoreapp2.2/publish/'
+#     archiveType: 'zip'
+#     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+#     replaceExistingArchive: true
 
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -29,7 +29,7 @@ steps:
     azureSubscription: 'maolukeji (a5f577a3-bdfa-49fa-871a-4c71d5eceae7)'
     appType: 'webAppLinux'
     WebAppName: 'pcv2'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
+    packageForLinux: 'publish'
     RuntimeStack: 'DOTNETCORE|2.2'
     StartupCommand: 'dotnet WebApplication1.dll'
     
